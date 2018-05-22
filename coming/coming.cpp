@@ -8,7 +8,6 @@ class CLength
 private:
 	int foot;
 	int inch;
-	double meter;
 public:
 	CLength()
 	{
@@ -28,6 +27,11 @@ public:
 			inch = inch - (inch / 12) * 12;
 		}
 	}
+	void value(int ft,double in)
+	{
+		foot  = ft + foot;
+		inch  = in + inch;
+	}
 
 	void display()
 	{
@@ -38,7 +42,8 @@ public:
 int main()
 {
 	CLength c;
-	c.set(8, 40);
+	c.set(12, 60);
+	c.value(2, 3);
 	c.setvalue();
 	c.display();
 	return 0;
